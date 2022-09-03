@@ -9,7 +9,7 @@ app.use(cors())
 app.use(express.json())
 
 const apiData=require("./data.json")
-app.get('/users',(req,res)=>{
+app.get('/user/all',(req,res)=>{
     res.send(apiData)
 })
 
