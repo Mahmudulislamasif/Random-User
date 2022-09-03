@@ -3,12 +3,16 @@ const cors = require('cors');
 require('dotenv').config();
 const port=process.env.PORT || 5000;
 const app=express()
-
+const RandomUser = require('randomuser');
+const client = new RandomUser();
 // middleware
 app.use(cors())
 app.use(express.json())
 
 const apiData=require("./data.json")
+client.get('/user/random',(req,res)=>{
+    res.send(apiData)
+})
 app.get('/user/all',(req,res)=>{
     res.send(apiData)
 })
