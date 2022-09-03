@@ -10,14 +10,14 @@ app.use(cors())
 app.use(express.json())
 
 const apiData=require("./data.json")
-client.get('/user/random',(req,res)=>{
+app.get('/user/random',(req,res)=>{
     res.send(apiData)
 })
 app.get('/user/all',(req,res)=>{
     res.send(apiData)
 })
 
-app.post('/users',(req,res)=>{
+app.post('/user/save',(req,res)=>{
     user.push(req.body)
     res.send(user)
 })
