@@ -11,15 +11,15 @@ app.use(express.json())
 
 const apiData=require("./data.json")
 app.get('/user/random',(req,res)=>{
-    res.send(apiData)
+    res.send(apiData.random())
 })
 app.get('/user/all',(req,res)=>{
     res.send(apiData)
 })
 
 app.post('/user/save',(req,res)=>{
-    user.push(req.body)
-    res.send(user)
+    apiData.push(req.body)
+    res.send(apiData)
 })
 // app.delete('/users/:id',(req,res)=>{
 //     const {id}=req.params;
